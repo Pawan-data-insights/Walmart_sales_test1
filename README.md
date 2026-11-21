@@ -111,15 +111,21 @@ python python/data_cleaning.py --input data/Walmart.csv --output data/walmart_cl
 
 ---
 
-## 📊 Stage 3: Interactive dashboard
 
-**👉 [Open `dashboard/Walmart_Sales_Dashboard.html`](dashboard/Walmart_Sales_Dashboard.html)** (download it and double-click, or view it on GitHub Pages: `https://<your-username>.github.io/<repo-name>/dashboard/Walmart_Sales_Dashboard.html`)
+## 📊 Stage 3: Interactive Dashboard
+
+**👉 [Open Interactive Walmart Sales Dashboard](walmart_sales_dashboard%20%281%29.html)**
+
+Or view the live dashboard using GitHub Pages:
+
+[🚀 Launch Live Dashboard](https://pawan-data-insights.github.io/Walmart_sales_test1/walmart_sales_dashboard%20%281%29.html)
 
 Designed with a Walmart-inspired blue and spark-yellow theme and built with **Claude AI** (HTML + Chart.js), using the cleaned data and the SQL questions above as the brief.
 
 | ☀️ Light theme | 🌙 Dark theme |
 |:---:|:---:|
-| ![Light](dashboard/screenshots/dashboard-light.png) | ![Dark](dashboard/screenshots/dashboard-dark.png) |
+| ![Light Theme](dashboard-light.png) | ![Dark Theme](dashboard-dark.png) |
+
 
 **What is inside**
 
