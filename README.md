@@ -13,7 +13,9 @@
 &nbsp;·&nbsp; **[SQL Analysis](walmart_querry.sql)**
  
  &nbsp;·&nbsp; **[Notebook](project.ipynb)**
-&nbsp;·&nbsp; **[Clean Data](data/walmart_clean_data.csv)**
+
+&nbsp;·&nbsp; **[Clean Data](walmart_clean_data.csv)**
+
 
 ![Dashboard preview](dashboard/screenshots/dashboard-light.png)
 
