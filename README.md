@@ -118,7 +118,9 @@ python python/data_cleaning.py --input data/Walmart.csv --output data/walmart_cl
 
 Or view the live dashboard using GitHub Pages:
 
-[🚀 Launch Live Dashboard](https://pawan-data-insights.github.io/Walmart_sales_test1/walmart_sales_dashboard%20%281%29.html)
+
+[🚀 Launch Live Dashboard](https://pawan-data-insights.github.io/Walmart_sales_test1/Walmart_Sales_Dashboard%20%281%29.html)
+
 
 Designed with a Walmart-inspired blue and spark-yellow theme and built with **Claude AI** (HTML + Chart.js), using the cleaned data and the SQL questions above as the brief.
 
