@@ -6,7 +6,7 @@
 
 ![Python](https://img.shields.io/badge/Python-pandas-0071DC?style=for-the-badge&logo=python&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Window_Functions_&_CTEs-041E42?style=for-the-badge&logo=mysql&logoColor=white)
-![Dashboard](https://img.shields.io/badge/Dashboard-HTML_·_Chart.js-FFC220?style=for-the-badge&logoColor=black)
+![Dashboard](file:///C:/Users/pawan/Downloads/Walmart_Sales_Dashboard%20(1).html)
 ![Built with](https://img.shields.io/badge/Dashboard_built_with-Claude_AI-76C2FF?style=for-the-badge)
 
 **[▶ Open the Dashboard](dashboard/Walmart_Sales_Dashboard.html)** &nbsp;·&nbsp; **[SQL Analysis](sql/walmart_querry.sql)** &nbsp;·&nbsp; **[Cleaning Script](python/data_cleaning.py)** &nbsp;·&nbsp; **[Notebook](notebooks/project.ipynb)** &nbsp;·&nbsp; **[Clean Data](data/walmart_clean_data.csv)**
