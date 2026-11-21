@@ -10,7 +10,7 @@
 ![Built with](https://img.shields.io/badge/Dashboard_built_with-Claude_AI-76C2FF?style=for-the-badge)
 
 **[▶ Open the Dashboard](dashboard/Walmart_Sales_Dashboard.html)** &nbsp;·&nbsp; **[SQL Analysis](sql/walmart_querry.sql)** 
-&nbsp;·&nbsp; **[Cleaning Script](data_cleaning.py)** &nbsp;·&nbsp; **[Notebook](project.ipynb)**
+ &nbsp;·&nbsp; **[Notebook](project.ipynb)**
 &nbsp;·&nbsp; **[Clean Data](data/walmart_clean_data.csv)**
 
 ![Dashboard preview](dashboard/screenshots/dashboard-light.png)
@@ -51,8 +51,7 @@ flowchart LR
 
 ## 🐍 Stage 1: Data cleaning & transformation (Python)
 
-
-**Script:** [`data_cleaning.py`](data_cleaning.py) · **Exploration Notebook:** [`project.ipynb`](project.ipynb)
+ **Exploration Notebook:** [`project.ipynb`](project.ipynb)
 
 
 | Step | Why it matters |
