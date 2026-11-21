@@ -1,199 +1,136 @@
-<div align="center">
+# Walmart Data Analysis: End-to-End SQL + Python Project P-9
 
-# 🛒 Walmart Sales Data Analytics Project
+## Project Overview
 
-### From a messy CSV to an interactive dashboard: Python → SQL → Dashboard
+![Project Pipeline](https://github.com/najirh/Walmart_SQL_Python/blob/main/walmart_project-piplelines.png)
 
-![Python](https://img.shields.io/badge/Python-pandas-0071DC?style=for-the-badge&logo=python&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-Window_Functions_&_CTEs-041E42?style=for-the-badge&logo=mysql&logoColor=white)
-![Dashboard](file:///C:/Users/pawan/Downloads/Walmart_Sales_Dashboard%20(1).html)
-![Built with](https://img.shields.io/badge/Dashboard_built_with-Claude_AI-76C2FF?style=for-the-badge)
 
-**[▶ Open the Dashboard](dashboard/Walmart_Sales_Dashboard.html)** &nbsp;·&nbsp; **[SQL Analysis](sql/walmart_querry.sql)** &nbsp;·&nbsp; **[Cleaning Script](python/project.ipynb)** &nbsp;·&nbsp; **[Notebook](notebooks/project.ipynb)** &nbsp;·&nbsp; **[Clean Data](data/walmart_clean_data.csv)**
-
-![Dashboard preview](dashboard/screenshots/dashboard-light.png)
-
-</div>
+This project is an end-to-end data analysis solution designed to extract critical business insights from Walmart sales data. We utilize Python for data processing and analysis, SQL for advanced querying, and structured problem-solving techniques to solve key business questions. The project is ideal for data analysts looking to develop skills in data manipulation, SQL querying, and data pipeline creation.
 
 ---
 
-## 📌 Project at a glance
+## Project Steps
 
-I took 10,000 raw Walmart transactions, cleaned them with Python, answered 12 business questions in SQL, and turned the findings into an interactive, recruiter-friendly dashboard with trend analysis and a dark mode.
+### 1. Set Up the Environment
+   - **Tools Used**: Visual Studio Code (VS Code), Python, SQL (MySQL and PostgreSQL)
+   - **Goal**: Create a structured workspace within VS Code and organize project folders for smooth development and data handling.
 
-| 🧾 Transactions | 🏬 Branches | 🌆 Cities | 🗂️ Categories | 📅 Period | 💵 Revenue | 💰 Profit |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **9,969** | **100** | **98** | **6** | **2019 – 2023** | **$1.21M** | **$476K** |
+### 2. Set Up Kaggle API
+   - **API Setup**: Obtain your Kaggle API token from [Kaggle](https://www.kaggle.com/) by navigating to your profile settings and downloading the JSON file.
+   - **Configure Kaggle**: 
+      - Place the downloaded `kaggle.json` file in your local `.kaggle` folder.
+      - Use the command `kaggle datasets download -d <dataset-path>` to pull datasets directly into your project.
+
+### 3. Download Walmart Sales Data
+   - **Data Source**: Use the Kaggle API to download the Walmart sales datasets from Kaggle.
+   - **Dataset Link**: [Walmart Sales Dataset](https://www.kaggle.com/najir0123/walmart-10k-sales-datasets)
+   - **Storage**: Save the data in the `data/` folder for easy reference and access.
+
+### 4. Install Required Libraries and Load Data
+   - **Libraries**: Install necessary Python libraries using:
+     ```bash
+     pip install pandas numpy sqlalchemy mysql-connector-python psycopg2
+     ```
+   - **Loading Data**: Read the data into a Pandas DataFrame for initial analysis and transformations.
+
+### 5. Explore the Data
+   - **Goal**: Conduct an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
+   - **Analysis**: Use functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
+
+### 6. Data Cleaning
+   - **Remove Duplicates**: Identify and remove duplicate entries to avoid skewed results.
+   - **Handle Missing Values**: Drop rows or columns with missing values if they are insignificant; fill values where essential.
+   - **Fix Data Types**: Ensure all columns have consistent data types (e.g., dates as `datetime`, prices as `float`).
+   - **Currency Formatting**: Use `.replace()` to handle and format currency values for analysis.
+   - **Validation**: Check for any remaining inconsistencies and verify the cleaned data.
+
+### 7. Feature Engineering
+   - **Create New Columns**: Calculate the `Total Amount` for each transaction by multiplying `unit_price` by `quantity` and adding this as a new column.
+   - **Enhance Dataset**: Adding this calculated field will streamline further SQL analysis and aggregation tasks.
+
+### 8. Load Data into MySQL and PostgreSQL
+   - **Set Up Connections**: Connect to MySQL and PostgreSQL using `sqlalchemy` and load the cleaned data into each database.
+   - **Table Creation**: Set up tables in both MySQL and PostgreSQL using Python SQLAlchemy to automate table creation and data insertion.
+   - **Verification**: Run initial SQL queries to confirm that the data has been loaded accurately.
+
+### 9. SQL Analysis: Complex Queries and Business Problem Solving
+   - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
+     - Revenue trends across branches and categories.
+     - Identifying best-selling product categories.
+     - Sales performance by time, city, and payment method.
+     - Analyzing peak sales periods and customer buying patterns.
+     - Profit margin analysis by branch and category.
+   - **Documentation**: Keep clear notes of each query's objective, approach, and results.
+
+### 10. Project Publishing and Documentation
+   - **Documentation**: Maintain well-structured documentation of the entire process in Markdown or a Jupyter Notebook.
+   - **Project Publishing**: Publish the completed project on GitHub or any other version control platform, including:
+     - The `README.md` file (this document).
+     - Jupyter Notebooks (if applicable).
+     - SQL query scripts.
+     - Data files (if possible) or steps to access them.
 
 ---
 
-## 🔄 The pipeline
+## Requirements
 
-```mermaid
-flowchart LR
-    A[📥 Raw Walmart CSV<br/>~10K invoices] --> B[🐍 Python · pandas<br/>clean + transform]
-    B --> C[📄 walmart_clean_data.csv<br/>9,969 rows]
-    C --> D[🗄️ MySQL<br/>walmart_data table]
-    D --> E[🔎 SQL analysis<br/>12 business questions]
-    E --> F[📊 Interactive dashboard<br/>built with Claude AI]
-    F --> G[💡 Insights & recommendations]
+- **Python 3.8+**
+- **SQL Databases**: MySQL, PostgreSQL
+- **Python Libraries**:
+  - `pandas`, `numpy`, `sqlalchemy`, `mysql-connector-python`, `psycopg2`
+- **Kaggle API Key** (for data downloading)
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   ```
+2. Install Python libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up your Kaggle API, download the data, and follow the steps to load and analyze.
+
+---
+
+## Project Structure
+
+```plaintext
+|-- data/                     # Raw data and transformed data
+|-- sql_queries/              # SQL scripts for analysis and queries
+|-- notebooks/                # Jupyter notebooks for Python analysis
+|-- README.md                 # Project documentation
+|-- requirements.txt          # List of required Python libraries
+|-- main.py                   # Main script for loading, cleaning, and processing data
 ```
+---
 
-| Stage | What happens | Output |
-|---|---|---|
-| **1 · Python** | Profile, clean and transform the raw file | [`python/data_cleaning.py`](python/data_cleaning.py) · [`notebooks/project.ipynb`](notebooks/project.ipynb) |
-| **2 · SQL** | Load into MySQL, solve business problems with window functions and CTEs | [`sql/walmart_querry.sql`](sql/walmart_querry.sql) |
-| **3 · Dashboard** | Turn the SQL findings into a filterable, trend-aware dashboard | [`dashboard/Walmart_Sales_Dashboard.html`](dashboard/Walmart_Sales_Dashboard.html) |
+## Results and Insights
+
+This section will include your analysis findings:
+- **Sales Insights**: Key categories, branches with highest sales, and preferred payment methods.
+- **Profitability**: Insights into the most profitable product categories and locations.
+- **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
+
+## Future Enhancements
+
+Possible extensions to this project:
+- Integration with a dashboard tool (e.g., Power BI or Tableau) for interactive visualization.
+- Additional data sources to enhance analysis depth.
+- Automation of the data pipeline for real-time data ingestion and analysis.
 
 ---
 
-## 🐍 Stage 1: Data cleaning & transformation (Python)
+## License
 
-
-**Script:** [View Python Analysis Notebook](project.ipynb) · **Exploration notebook:** [Open Project Notebook](project.ipynb)
-
-
-| Step | Why it matters |
-|---|---|
-| Profile the data (shape, types, nulls, duplicates) | Know what is broken before fixing it |
-| Trim stray spaces in text columns | Prevents fake categories like `"Cash "` vs `"Cash"` |
-| Remove duplicate records | Duplicates inflate revenue and counts |
-| Strip `$` from `unit_price` and convert to numbers | Prices must be numeric to calculate revenue |
-| Validate dates and times | The SQL stage parses them (`STR_TO_DATE`, `HOUR`) |
-| Drop rows with missing values | A tiny share of rows, so dropping is safer than guessing |
-| Remove impossible values (price/quantity ≤ 0, rating outside 0–10) | Protects every average downstream |
-| **Feature engineering:** `total = unit_price × quantity` | Revenue column used in all SQL and dashboard metrics |
-
-**Result:** 9,969 clean rows with 12 columns, no nulls and no duplicates. The script ends with built-in validation checks and can optionally load the data straight into MySQL.
-
-```bash
-python python/data_cleaning.py --input data/Walmart.csv --output data/walmart_clean_data.csv
-```
+This project is licensed under the MIT License. 
 
 ---
 
-## 🗄️ Stage 2: Business problem solving (SQL)
+## Acknowledgments
 
-File: [`sql/walmart_querry.sql`](sql/walmart_querry.sql) · Data source: [`data/walmart_clean_data.csv`](data/walmart_clean_data.csv)
-
-| # | Business question | SQL technique |
-|:---:|---|---|
-| Q1 | Payment methods: how many transactions and units sold? | `GROUP BY`, `COUNT`, `SUM` |
-| Q2 | Highest-rated category in each branch | `RANK() OVER (PARTITION BY …)` |
-| Q3 | Busiest weekday for each branch | `STR_TO_DATE`, `DATE_FORMAT`, `RANK()` |
-| Q4 | Units sold per payment method | Aggregation |
-| Q5 | Min / avg / max rating per city and category | Multi-column `GROUP BY` |
-| Q6 | Revenue and profit by category | `SUM(total × profit_margin)` |
-| Q7 | Preferred payment method per branch | CTE + `RANK()` |
-| Q8 | Morning / afternoon / evening sales | `CASE WHEN`, `HOUR()` |
-| Q9 | 5 branches with the biggest revenue drop, 2022 → 2023 | Two CTEs + `JOIN` |
-| ➕ | When is demand peaking? Monthly traffic and revenue | Date functions, trend by month |
-| ➕ | Where does profit come from vs revenue? | Dual `RANK()` on revenue and profit |
-| ➕ | What drives low ratings? | `HAVING`, category × payment cuts |
-
-### 🔍 What the SQL revealed
-
-| Finding | Evidence |
-|---|---|
-| **Credit card is the most used payment method** | 4,256 transactions (43%) and 9,567 units vs Ewallet 3,881 / 8,932 and Cash 1,832 / 4,984 |
-| **Two categories carry the business** | Fashion accessories and Home & lifestyle bring ~$489K each, about 81% of revenue |
-| **Margins are almost identical everywhere** | All categories sit between 39% and 40%, so volume, not margin, drives profit |
-| **Afternoon is the busiest shift** | 4,636 orders (47%) vs evening 3,246 and morning 2,087 |
-| **Biggest 2022 → 2023 revenue drops** | WALM045 (−62.6%), WALM047 (−58.6%), WALM098 (−57.9%), WALM033 (−55.6%), WALM081 (−50.7%) |
-| **Top profit branches** | WALM009 ($12.3K), WALM030 ($11.7K), WALM003 ($11.5K) |
+- **Data Source**: Kaggle’s Walmart Sales Dataset
+- **Inspiration**: Walmart’s business case studies on sales and supply chain optimization.
 
 ---
-
-## 📊 Stage 3: Interactive dashboard
-
-**👉 [Open `dashboard/Walmart_Sales_Dashboard.html`](dashboard/Walmart_Sales_Dashboard.html)** (download it and double-click, or view it on GitHub Pages: `https://<your-username>.github.io/<repo-name>/dashboard/Walmart_Sales_Dashboard.html`)
-
-Designed with a Walmart-inspired blue and spark-yellow theme and built with **Claude AI** (HTML + Chart.js), using the cleaned data and the SQL questions above as the brief.
-
-| ☀️ Light theme | 🌙 Dark theme |
-|:---:|:---:|
-| ![Light](dashboard/screenshots/dashboard-light.png) | ![Dark](dashboard/screenshots/dashboard-dark.png) |
-
-**What is inside**
-
-- **Dynamic filters:** year, category and payment method update every chart, KPI and insight at once
-- **6 KPI cards:** revenue, profit, margin, transactions, average rating, average basket, with year-on-year change and sparklines
-- **Trend analysis:** monthly trend with a 3-month moving average and linear trend line, prior-year overlay, and a seasonality chart by year
-- **Auto-generated insights:** six insight cards that rewrite themselves based on the active filter
-- **SQL answers as visuals:** demand heatmap (weekday × hour), top 10 branches by profit, category revenue vs profit, payment mix, rating by category × payment, shift split, top-5 revenue decliners
-- **Light / dark theme toggle** that remembers your choice
-
-### 💡 Key insights from the dashboard
-
-1. **Seasonality is the story.** November and December deliver about 41% of annual revenue, every single year. Inventory and staffing should be planned around Q4.
-2. **Revenue is flat, not growing.** Full-year revenue moved from $219K (2020) to $232K (2023), roughly +1.9% a year.
-3. **Payment method shapes satisfaction.** Ewallet customers rate their experience 6.48 vs 5.42 for cash and credit card, a gap worth investigating (checkout speed?).
-4. **Staff for the afternoon.** The demand heatmap shows the heaviest traffic from 3 PM to 8 PM on every weekday, peaking at 3 PM.
-
-> ⚠️ **Data note:** 2019 contains only January–March, so year-on-year comparisons start with 2021 vs 2020, and 2019 is marked as partial in the charts.
-
----
-
-## 🗂️ Repository structure
-
-```text
-walmart-sales-data-analytics/
-├── data/
-│   └── walmart_clean_data.csv          # cleaned dataset (9,969 rows)
-├── python/
-│   └── data_cleaning.py                # Stage 1: clean + transform (+ optional MySQL load)
-├── notebooks/
-│   └── project.ipynb                   # Stage 1: exploration notebook
-├── sql/
-│   └── walmart_querry.sql              # Stage 2: business problems in SQL
-├── dashboard/
-│   ├── Walmart_Sales_Dashboard.html    # Stage 3: interactive dashboard
-│   └── screenshots/                    # light and dark previews
-└── README.md
-```
-
----
-
-## 🚀 Run it yourself
-
-```bash
-# 1. Clone
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-
-# 2. Install libraries
-pip install pandas numpy sqlalchemy mysql-connector-python
-
-# 3. Clean the raw data (download it first, see Data source below)
-python python/data_cleaning.py --input data/Walmart.csv --output data/walmart_clean_data.csv
-
-# 4. (Optional) load into MySQL, then run sql/walmart_querry.sql
-python python/data_cleaning.py --mysql "mysql+mysqlconnector://user:password@localhost:3306/walmart_db"
-
-# 5. Open the dashboard
-#    double-click dashboard/Walmart_Sales_Dashboard.html (internet needed for Chart.js and fonts)
-```
-
----
-
-## 🧰 Tech stack
-
-`Python` · `pandas` · `NumPy` · `SQLAlchemy` · `MySQL` · `Window functions` · `CTEs` · `HTML / CSS / JavaScript` · `Chart.js` · `Claude AI` (dashboard build)
-
----
-
-## 👤 Author
-
-**Pawan Singh**: MBA graduate, open to Data Analyst and Financial Analyst roles.
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pawan_Singh-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pawan-singh-3952bb42b/)
-
-If this project helped or interested you, a ⭐ on the repo is appreciated!
-
----
-
-## 🙏 Credits
-
-- **Data source:** [Walmart 10K Sales Dataset on Kaggle](https://www.kaggle.com/najir0123/walmart-10k-sales-datasets)
-- **Dashboard:** designed and built with Claude AI
-- Walmart name and logo are trademarks of Walmart Inc., used here for illustrative, educational purposes only. This project is not affiliated with or endorsed by Walmart.
