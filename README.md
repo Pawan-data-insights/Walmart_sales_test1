@@ -49,7 +49,7 @@ flowchart LR
 
 ## 🐍 Stage 1: Data cleaning & transformation (Python)
 
-Script: [`python/data_cleaning.py`](python/data_cleaning.py) · Exploration notebook: [`notebooks/project.ipynb`](notebooks/project.ipynb)
+Script: [View Python Analysis Notebook](project.ipynb) · Exploration notebook: [`notebooks/project.ipynb`](notebooks/project.ipynb)
 
 | Step | Why it matters |
 |---|---|
