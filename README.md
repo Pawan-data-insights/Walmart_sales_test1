@@ -9,7 +9,9 @@
 ![Dashboard](https://img.shields.io/badge/Dashboard-HTML_·_Chart.js-FFC220?style=for-the-badge&logoColor=black)
 ![Built with](https://img.shields.io/badge/Dashboard_built_with-Claude_AI-76C2FF?style=for-the-badge)
 
-**[▶ Open the Dashboard](dashboard/Walmart_Sales_Dashboard.html)** &nbsp;·&nbsp; **[SQL Analysis](sql/walmart_querry.sql)** 
+**[▶ Open the Dashboard](dashboard/Walmart_Sales_Dashboard.html)** 
+&nbsp;·&nbsp; **[SQL Analysis](walmart_querry.sql)**
+ 
  &nbsp;·&nbsp; **[Notebook](project.ipynb)**
 &nbsp;·&nbsp; **[Clean Data](data/walmart_clean_data.csv)**
 
@@ -75,7 +77,9 @@ python python/data_cleaning.py --input data/Walmart.csv --output data/walmart_cl
 
 ## 🗄️ Stage 2: Business problem solving (SQL)
 
-File: [`sql/walmart_querry.sql`](sql/walmart_querry.sql) · Data source: [`data/walmart_clean_data.csv`](data/walmart_clean_data.csv)
+
+**File:** [`walmart_querry.sql`](walmart_querry.sql) · **Data Source:** [`walmart_clean_data.csv`](walmart_clean_data.csv)
+
 
 | # | Business question | SQL technique |
 |:---:|---|---|
